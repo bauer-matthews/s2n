@@ -61,4 +61,7 @@ phases:
       - echo Entered the post_build phase...
       - echo Build completed on `date`
       - echo Uploading CodeCov.io artifacts
-#      - codebuild/bin/s2n_after_codebuild.sh
+      - codebuild/bin/s2n_after_codebuild.sh
+artifacts:
+  files:
+    - tests/saw/tmp/verify_HMAC.log
