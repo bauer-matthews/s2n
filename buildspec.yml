@@ -13,6 +13,15 @@
 # limitations under the License.
 version: 0.2
 
+env:
+  variables:
+    BUILD_S2N: "false"
+    OS_NAME: "linux"
+    TESTS: "sawHMAC"
+    SAW: "true"
+    GCC_VERSION: "NONE"
+
+
 phases:
   install:
     runtime-versions:
@@ -41,12 +50,12 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
-#      - codebuild/bin/install_default_dependencies.sh
+      - codebuild/bin/install_default_dependencies.sh
   build:
     commands:
       - echo Entered the build phase...
       - printenv
-#      - codebuild/bin/s2n_codebuild.sh
+      - codebuild/bin/s2n_codebuild.sh
   post_build:
     commands:
       - echo Entered the post_build phase...
